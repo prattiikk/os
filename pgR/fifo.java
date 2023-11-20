@@ -42,9 +42,10 @@ public class FIFO {
 
             // If page is not in frames, replace the oldest page
             if (!pagehit) {
+                pagefault++;
                 frames[curr] = pages;
                 curr = (curr + 1) % no_frames;
-                pagefault++;
+                
             }
 
             // Output the current state of frames
